@@ -1,7 +1,7 @@
 #!/bin/bash
 # Create a fresh wordpress install
-apache_check=´apache2ctl -t´
-apache_restart=´service apache2 restart´
+apache_check=$(apache2ctl -t)
+apache_restart=$(service apache2 restart)
 
 echo "============================================"
 echo "WordPress Telepítő Script"
@@ -78,4 +78,5 @@ rm /opt/latest.tar.gz
 echo "Wordpress telepítve!!"
 
 echo "Ne felejtsd el:DB-t létrehozni a megfelelő adatokka és a DNS-t felvenni!"
+fi
 fi
