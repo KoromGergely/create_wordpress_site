@@ -1,7 +1,7 @@
 #!/bin/bash
 # Create a fresh wordpress install
-apache_check=$(apache2ctl -t)
-apache_restart=$(service apache2 restart)
+apache_check=`apache2ctl -t`
+apache_restart=`service apache2 restart`
 
 echo "============================================"
 echo "WordPress Telepítő Script"
@@ -54,16 +54,16 @@ ln -s /etc/sites-available/com.shiwaforce.$websiteurl /etc/sites-enabled/
 
 # ide egy feltétel vizsgálat ha OK akkor mehet a restart
 
-$apache_check
+#$apache_check
 
-if $apache_check = "Syntax OK"
+#if $apache_check = "Syntax OK"
 
-then $apache_restart
+$apache_restart
 
-else
+#else
 
-exit
-  
+#exit
+#  
 
 
 #create uploads folder and set permissions
@@ -77,6 +77,6 @@ rm -rf /opt/wordpress/*
 rm /opt/latest.tar.gz
 echo "Wordpress telepítve!!"
 
-echo "Ne felejtsd el:DB-t létrehozni a megfelelő adatokka és a DNS-t felvenni!"
+echo "Ne felejtsd el a DB-t létrehozni a megfelelő adatokkal és a DNS-t felvenni!"
 fi
 fi
